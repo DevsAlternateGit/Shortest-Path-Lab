@@ -5,4 +5,5 @@ primaryColor="#FF6B6B"              # coral accent (alive, energetic)
 backgroundColor="#0B1020"          # deep navy night
 secondaryBackgroundColor="#12182B" # card/panel contrast
 textColor="#EAEAF0"                # soft light text
-font="sans serif"
+
+font = "'Space Grotesk':https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap"

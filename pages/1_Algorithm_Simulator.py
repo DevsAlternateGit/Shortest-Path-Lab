@@ -88,7 +88,7 @@ with st.expander("Graph Generator", expanded=True):
     # Generator specific params
     prob = 0.2
     if "Erdos" in selected_builder_name or "DAG" in selected_builder_name or "Equal" in selected_builder_name:
-        prob = st.slider("Edge Probability)", 0.05, 1.0, 0.2)
+        prob = st.slider("Edge Probability", 0.05, 1.0, 0.2)
             
     rows, cols = 4, 4
     if "Grid" in selected_builder_name:

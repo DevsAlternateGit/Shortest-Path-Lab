@@ -41,9 +41,9 @@ c1, c2, c3 = st.columns([2,1,1])
 with c1:
     selected_algos = st.multiselect("Select Algorithms", list(ALGO_MAP.keys()), default=["Dijkstra", "Bellman-Ford"])
     # Defaults
-    if not selected_algos:
+    if (not selected_algos) or len(selected_algos) == 1:
         # Just to prevent empty list errors if user clears it
-        selected_algos = ["Dijkstra"]
+        selected_algos = ["Dijkstra", "Bellman-Ford"]
 
 with c2:
     node_options = list(G.nodes())
@@ -57,8 +57,6 @@ if st.button("Compare"):
     results = []
     
     G_run = G
-    
-    st.divider()
     
     cols = st.columns(len(selected_algos))
     
@@ -104,7 +102,6 @@ if st.button("Compare"):
             st.caption(f"Cost: {res['Final Cost']}")
             st.caption(f"Time: {res['Time (s)']}s")
 
-    st.divider()
     st.subheader("Comparison Table")
     df = pd.DataFrame(results)
     # Reorder columns

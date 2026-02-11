@@ -1,9 +1,9 @@
 [theme]
 base="dark"
 
-primaryColor="#FF6B6B"              # coral accent (alive, energetic)
-backgroundColor="#0B1020"          # deep navy night
-secondaryBackgroundColor="#12182B" # card/panel contrast
-textColor="#EAEAF0"                # soft light text
+primaryColor="#7AA2F7"              # soft blue ink (not neon)
+backgroundColor="#0F172A"           # deep slate (chalkboard paper)
+secondaryBackgroundColor="#111827"  # panels/cards slightly darker
+textColor="#E5E7EB"                 # chalk/white pencil
 
 font = "'Space Grotesk':https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap"

@@ -69,7 +69,7 @@ with st.expander("Graph Generator", expanded=True):
         "Grid Graph (A*)": 25,   # 5x5
     }
     
-    col_type, col_nodes, col_seed = st.columns([3,1,1])
+    col_type, col_nodes, col_seed, col_probability = st.columns([2,1,1,3])
     
     with col_type:
         selected_builder_name = st.selectbox("Graph Type", list(BUILDER_MAP.keys()))
@@ -85,10 +85,11 @@ with st.expander("Graph Generator", expanded=True):
     with col_seed:
         seed = st.number_input("Random Seed", 0, 999, 42)
 
-    # Generator specific params
-    prob = 0.2
-    if "Erdos" in selected_builder_name or "DAG" in selected_builder_name or "Equal" in selected_builder_name:
-        prob = st.slider("Edge Probability", 0.05, 1.0, 0.2)
+    with col_probability:
+        # Generator specific params
+        prob = 0.2
+        if "Erdos" in selected_builder_name or "DAG" in selected_builder_name or "Equal" in selected_builder_name:
+            prob = st.slider("Edge Probability", 0.05, 1.0, 0.2)
             
     rows, cols = 4, 4
     if "Grid" in selected_builder_name:
@@ -174,8 +175,6 @@ with c4:
         st.rerun()
 
 # --- Main Visualization Area ---
-
-st.markdown("---")
 
 steps = st.session_state['steps']
 curr_idx = st.session_state['curr_step']
